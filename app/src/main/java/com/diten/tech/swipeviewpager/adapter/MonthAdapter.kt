@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.diten.tech.swipeviewpager.R
 import com.diten.tech.swipeviewpager.model.MonthModel
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.card_item.view.*
 
 class MonthAdapter (private val context: Context, private val myModelArryList:ArrayList<MonthModel>) :
@@ -28,7 +29,7 @@ class MonthAdapter (private val context: Context, private val myModelArryList:Ar
         val view = LayoutInflater.from(context).inflate(R.layout.card_item,container,false)
 
         //get data
-        val model = myModelArryList[position]
+        val model = myModelArryList[1]
         val childRecyclerView  = view.childRecyclerView
 
         childRecyclerView.apply {
@@ -57,7 +58,9 @@ class MonthAdapter (private val context: Context, private val myModelArryList:Ar
          */
 
         //add view to container
+
         container.addView(view,position)
+
         return view
     }
 

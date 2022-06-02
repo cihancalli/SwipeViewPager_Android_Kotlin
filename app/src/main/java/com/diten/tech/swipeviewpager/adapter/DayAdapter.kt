@@ -1,6 +1,7 @@
 package com.diten.tech.swipeviewpager.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,10 +39,13 @@ class DayAdapter (private var context: Context) : RecyclerView.Adapter<DayAdapte
     override fun onBindViewHolder(holder: DayAdapter.ViewHolder, position: Int) {
         var data = dataList[position]
 
-        holder.title.text  = data.DayNo.toString()
+        holder.title.text  = data.CurrentDay.toString()
+
+            holder.title.setTextColor(Color.parseColor("#AEAEAE"))
+
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context,"${data.DayNo}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"${data.CurrentDay}", Toast.LENGTH_SHORT).show()
         }
 
     }
