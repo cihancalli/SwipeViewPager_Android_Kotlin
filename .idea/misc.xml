@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/cihancalli/AndroidStudioProjects/SwipeViewPager/app/src/main/res/drawable/shape_rect.xml" value="0.2035" />
-        <entry key="..\:/Users/cihancalli/AndroidStudioProjects/SwipeViewPager/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/cihancalli/AndroidStudioProjects/SwipeViewPager/app/src/main/res/layout/activity_main.xml" value="0.45" />
         <entry key="..\:/Users/cihancalli/AndroidStudioProjects/SwipeViewPager/app/src/main/res/layout/card_item.xml" value="0.25" />
+        <entry key="..\:/Users/cihancalli/AndroidStudioProjects/SwipeViewPager/app/src/main/res/layout/cell_layout.xml" value="0.3619791666666667" />
       </map>
     </option>
   </component>

@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.diten.tech.swipeviewpager.R
-import com.diten.tech.swipeviewpager.model.MyModel
+import com.diten.tech.swipeviewpager.model.MonthModel
 import kotlinx.android.synthetic.main.card_item.view.*
 
-class MyAdapter (private val context: Context, private val myModelArryList:ArrayList<MyModel>) :
+class MonthAdapter (private val context: Context, private val myModelArryList:ArrayList<MonthModel>) :
     PagerAdapter() {
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -28,28 +29,35 @@ class MyAdapter (private val context: Context, private val myModelArryList:Array
 
         //get data
         val model = myModelArryList[position]
-        val title = model.title
-        val description = model.description
-        val date = model.date
-        val image = model.image
+        val childRecyclerView  = view.childRecyclerView
+
+        childRecyclerView.apply {
+            layoutManager = GridLayoutManager(context,7)
+            val dayAdapter = DayAdapter(context)
+            childRecyclerView.adapter = dayAdapter
+            dayAdapter.setDataList(model.dayList)
+        }
+        //val title = model.title
 
         //set data to ui views
+        /*
         view.bannerIv.setImageResource(image)
         view.titleTv.text = title
         view.descriptionTv.text = description
         view.dateTv.text = date
+        */
 
         //handle item/card click
 
+        /*
         view.setOnClickListener {
-            Toast.makeText(context,"$title \n $description \n $date",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"$title",Toast.LENGTH_SHORT).show()
         }
+
+         */
 
         //add view to container
         container.addView(view,position)
-
-
-
         return view
     }
 
